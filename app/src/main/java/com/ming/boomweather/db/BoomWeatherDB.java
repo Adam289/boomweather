@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * Created by temp on 2016/10/13.
+ * 数据库操作类
  */
 
 public class BoomWeatherDB {
@@ -35,7 +36,7 @@ public class BoomWeatherDB {
         }
         return boomWeatherDB;
     }
-    private void saveProvince(Province province){
+    public void saveProvince(Province province){
         if(province!=null){
             ContentValues values = new ContentValues();
             values.put("province_name",province.getProvinceName());
@@ -43,7 +44,7 @@ public class BoomWeatherDB {
             db.insert("Province",null,values);
         }
     }
-    private List<Province> loadProvinces(){
+    public List<Province> loadProvinces(){
         List<Province> list = new ArrayList<Province>();
         Cursor cursor = db.query("Province",null,null,null,null,null,null);
         if(cursor.moveToNext()){
@@ -55,7 +56,7 @@ public class BoomWeatherDB {
         }while (cursor.moveToNext());
         return list;
     }
-    private void saveCity(City city){
+    public void saveCity(City city){
         if(city!=null){
             ContentValues values = new ContentValues();
             values.put("city_name",city.getCityName());
@@ -63,7 +64,7 @@ public class BoomWeatherDB {
             db.insert("City",null,values);
         }
     }
-    private List<City> loadCities(){
+    public List<City> loadCities(){
         List<City> list = new ArrayList<City>();
         Cursor cursor = db.query("Province",null,null,null,null,null,null);
         if(cursor.moveToNext()){
@@ -75,7 +76,7 @@ public class BoomWeatherDB {
         }while (cursor.moveToNext());
         return list;
     }
-    private void saveCounty(County county){
+    public void saveCounty(County county){
         if(county!=null){
             ContentValues values = new ContentValues();
             values.put("county_name",county.getCountyName());
@@ -84,7 +85,7 @@ public class BoomWeatherDB {
         }
 
     }
-    private List<County> loadCounties(){
+    public List<County> loadCounties(){
         List<County> list = new ArrayList<County>();
         Cursor cursor = db.query("County",null,null,null,null,null,null,null);
         if(cursor.moveToNext()){

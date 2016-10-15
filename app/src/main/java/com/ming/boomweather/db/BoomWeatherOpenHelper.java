@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by temp on 2016/10/13.
+ * 数据库帮助类
  */
 
 public class BoomWeatherOpenHelper extends SQLiteOpenHelper {
